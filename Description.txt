@@ -1,0 +1,42 @@
+CS410 programming assignment 2 task2
+
+I followed the nonprogramming based approaches for task2
+
+1 Try different ranking functions and different parameters
+
+I implemented tuning functions for the following ranking algorithms
+
+a Okapi BM25  I tuned k1 b k3 parameters and the Max MAP  0618818 that was obtained was for k117  b07 k3800
+
+b JelinekMercer  I tuned lambda parameter and the Max MAP  0595361 that was obtained was for Lambda  07
+
+c Pivotedlength  I tuned the s parameter and the MAX MAP  0613185 that was obtained was for s  02
+
+d DirichletPrior  I tuned mu parameter and the MAX MAP 0602803 that was obtained was for mu500
+
+e MPtf2ln  From the paper  httpsifakacsuiuceduczhaipubtoisdiagpdf
+The authors derived two new retrieval functions MPtf2ln and MDtf2ln
+as improved versions of the pivoted length normalization retrieval function and the
+Dirichlet prior retrieval function respectively and both have been shown to outperform
+their corresponding original functions not only on the six data sets used to derive
+them but also on two new data sets So I chose to implement and tune MPtf2ln
+
+Varied and tuned the parameters to get a Max MAP  0625796 achieved by s  035 mu  500 alpha  06 lambda  075 This is the final outputtxt
+
+2 I also tweaked the configtoml file for various filtering options as explained in the meta user guide for unigrams and bigrams The default filter option gave the best results
+
+analyzers
+method  ngramword
+ngram  1
+filter  defaultchain
+
+analyzers
+method  ngramword
+ngram  2
+filter  defaultchain
+
+3 Stopwords  I added more stopwords to the lemur_stopwordstxt but it made the MAP worse so I played around reducing some stopwords and it helped improve the maxMAP a bit
+
+
+
+
