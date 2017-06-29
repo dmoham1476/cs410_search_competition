@@ -4,6 +4,8 @@
  * Built based on query-runner.cpp which is written by Sean Massung
  */
 
+/**deepam2 submission for the search competition
+
 #include <cmath>
 #include <iostream>
 #include <random>
